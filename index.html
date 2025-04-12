@@ -18,50 +18,57 @@
       100% { opacity: 1; transform: translateY(0); }
     }
     .dark-mode {
-      background: radial-gradient(circle at top left, #1e293b, #0f172a);
+      background-color: #0f172a;
       color: #f8fafc;
     }
     .glow {
-      box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center px-4 py-10 dark-mode" id="mainBody">
+<body class="min-h-screen flex flex-col items-center justify-start dark-mode py-10 px-4">
 
-  <div class="absolute top-0 left-0 w-full h-60 bg-gradient-to-r from-blue-800 to-indigo-700 rounded-b-3xl shadow-lg z-0"></div>
-  <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Social Media Icon" class="absolute top-6 left-6 w-12 h-12 z-10">
+  <!-- Bandeau top visuel -->
+  <div class="w-full max-w-6xl relative mb-10">
+    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?fit=crop&w=1600&q=80" alt="Social Media Banner" class="w-full h-60 object-cover rounded-3xl shadow-xl">
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-3xl flex items-center justify-center">
+      <h1 class="text-white text-3xl md:text-4xl font-bold">🚀 Rejoignez notre équipe Social Media Marketing</h1>
+    </div>
+  </div>
 
-  <div class="bg-white dark:bg-slate-800 w-full max-w-3xl rounded-3xl shadow-2xl p-10 fade-in z-10 relative">
+  <!-- Carte de présentation -->
+  <div class="w-full max-w-3xl bg-slate-800 rounded-3xl shadow-2xl p-10 fade-in relative z-10">
     <div class="text-center mb-8">
-      <h1 class="text-3xl font-bold text-blue-700 dark:text-blue-300 mb-2 animate-pulse" id="formTitle">🚀 Rejoignez notre équipe Social Media Marketing</h1>
-      <p class="text-gray-600 dark:text-gray-300 text-lg" id="formSubtitle">Exprime ta créativité, booste des marques et travaille avec passion.</p>
+      <p class="text-gray-300 text-lg" id="formSubtitle">Exprime ta créativité, booste des marques et travaille avec passion.</p>
     </div>
 
-    <div class="flex justify-end mb-4">
-      <button onclick="switchLang('fr')" class="mr-2 text-sm font-medium text-gray-600 hover:text-blue-600">FR</button>
-      <button onclick="switchLang('en')" class="text-sm font-medium text-gray-600 hover:text-blue-600">EN</button>
+    <!-- Multilingue -->
+    <div class="flex justify-end mb-6">
+      <button onclick="switchLang('fr')" class="mr-2 text-sm font-medium text-gray-400 hover:text-blue-400">FR</button>
+      <button onclick="switchLang('en')" class="text-sm font-medium text-gray-400 hover:text-blue-400">EN</button>
     </div>
 
+    <!-- Formulaire -->
     <form id="freelanceForm" class="space-y-6">
       <div>
         <label class="block font-semibold mb-1" data-fr="👤 Nom complet" data-en="👤 Full Name">👤 Nom complet</label>
-        <input type="text" name="nom" required class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition glow">
+        <input type="text" name="nom" required class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition glow">
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <div>
           <label class="block font-semibold mb-1" data-fr="📧 Email" data-en="📧 Email">📧 Email</label>
-          <input type="email" name="email" required class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+          <input type="email" name="email" required class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
         </div>
         <div>
           <label class="block font-semibold mb-1" data-fr="📱 Téléphone" data-en="📱 Phone">📱 Téléphone</label>
-          <input type="tel" name="telephone" class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+          <input type="tel" name="telephone" class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
         </div>
       </div>
 
       <div>
         <label class="block font-semibold mb-2" data-fr="🌐 Réseaux que vous maîtrisez" data-en="🌐 Platforms you master">🌐 Réseaux que vous maîtrisez</label>
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-3 text-white">
           <label><input type="checkbox" name="reseaux[]" value="Instagram" class="mr-2">Instagram</label>
           <label><input type="checkbox" name="reseaux[]" value="Facebook" class="mr-2">Facebook</label>
           <label><input type="checkbox" name="reseaux[]" value="TikTok" class="mr-2">TikTok</label>
@@ -73,28 +80,28 @@
 
       <div>
         <label class="block font-semibold mb-1" data-fr="📚 Expérience" data-en="📚 Experience">📚 Expérience</label>
-        <textarea name="experience" rows="3" class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"></textarea>
+        <textarea name="experience" rows="3" class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition"></textarea>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <div>
           <label class="block font-semibold mb-1" data-fr="🔗 Portfolio / Comptes gérés" data-en="🔗 Portfolio / Managed accounts">🔗 Portfolio / Comptes gérés</label>
-          <input type="url" name="liens" class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+          <input type="url" name="liens" class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
         </div>
         <div>
           <label class="block font-semibold mb-1" data-fr="⏰ Disponibilité (h/semaine)" data-en="⏰ Availability (h/week)">⏰ Disponibilité (h/semaine)</label>
-          <input type="text" name="disponibilite" class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+          <input type="text" name="disponibilite" class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <div>
           <label class="block font-semibold mb-1" data-fr="💸 Tarif souhaité" data-en="💸 Desired rate">💸 Tarif souhaité</label>
-          <input type="text" name="tarif" class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+          <input type="text" name="tarif" class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
         </div>
         <div>
           <label class="block font-semibold mb-1" data-fr="🛠️ Compétences" data-en="🛠️ Skills">🛠️ Compétences</label>
-          <textarea name="competences" rows="3" class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"></textarea>
+          <textarea name="competences" rows="3" class="w-full px-4 py-2 border border-slate-600 rounded-xl bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition"></textarea>
         </div>
       </div>
 
@@ -107,36 +114,12 @@
       </div>
     </form>
 
-    <p class="text-center text-sm text-gray-300 italic mt-8">
+    <p class="text-center text-sm text-gray-400 italic mt-8">
       🌟 Chez nous, c’est l’humain et la passion avant tout. Prêt(e) à faire briller ton talent ? 🌟
     </p>
   </div>
 
   <script>
-    const form = document.getElementById("freelanceForm");
-    const confirmation = document.getElementById("confirmation");
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      try {
-        const response = await fetch("https://script.google.com/macros/s/TON_ID/exec", {
-          method: "POST",
-          body: formData
-        });
-
-        if (response.ok) {
-          form.reset();
-          confirmation.classList.remove("hidden");
-        } else {
-          alert("❌ Une erreur est survenue lors de l'envoi.");
-        }
-      } catch (err) {
-        console.error("Erreur :", err);
-        alert("❌ Problème de connexion avec le serveur.");
-      }
-    });
-
     function switchLang(lang) {
       const elements = document.querySelectorAll('[data-fr]');
       elements.forEach(el => {
