@@ -120,6 +120,23 @@
   </div>
 
   <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxTBo8uwnVG-owvUflaQKUKSJa1gRWY-4LMF7Q8BpZZEi2a1Iy4nks-y5wcOL4DZt76/exec';
+    const form = document.getElementById('freelanceForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          confirmation.classList.remove('hidden');
+          form.reset();
+          setTimeout(() => confirmation.classList.add('hidden'), 5000);
+        })
+        .catch(error => alert('Erreur lors de l'envoi. Veuillez réessayer.'));
+    });
+
     function switchLang(lang) {
       const elements = document.querySelectorAll('[data-fr]');
       elements.forEach(el => {
